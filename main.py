@@ -1,4 +1,4 @@
-//Presentacio: fer analisi dantecedents->que hem usat, que hem vist etc
+#Presentacio: fer analisi dantecedents->que hem usat, que hem vist etc
 
 import explorerhat
 import time
