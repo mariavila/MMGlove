@@ -4,12 +4,11 @@ import time
 #Trying if it works
 
 while 1:
-    explorerhat.light.red.off()
-    time.sleep(3) # 3secs
-    explorerhat.light.green.on()
-    time.sleep(3) # 3secs
-    explorerhat.light.green.off()
+    #explorerhat.light.blue.off()
+    #time.sleep(2) # 3secs
+    
     if(explorerhat.input.one.read()==1):
-        explorerhat.light.red.on()
+        explorerhat.light.blue.on()
     else:
-        explorerhat.light.red.toggle()
+        explorerhat.light.blue.off()
+    time.sleep(0.2) # 3secs
