@@ -8,4 +8,5 @@ while 1:
         pibrella.light.red.on()
     else:
         pibrella.light.red.off()
+    pirbella.light.blue.on();
     time.sleep(3) # 3secs
