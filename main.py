@@ -25,7 +25,7 @@ while 1:
         if(explorerhat.input.two.read()==1):
             print("entro 2")
             if(quin!=2):
-                pygame.mixer.music.load("Dit2/zelda.mp3")
+                pygame.mixer.music.load("Dit1/mario.mp3")
                 pygame.mixer.music.play()
                 quin=2
         else:
