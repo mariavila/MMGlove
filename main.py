@@ -30,5 +30,5 @@ while 1:
                 quin=2
         else:
             pygame.mixer.music.stop()
-            quin=2
+            quin=0
     time.sleep(0.2) # 3secs
