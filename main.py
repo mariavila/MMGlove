@@ -4,7 +4,8 @@ import pygame
 
 #Trying if it works
 pygame.mixer.init()
-s=pygame.mixer.Sound("mario.mp3")
+pygame.init()
+s=pygame.mixer.music.load("mario.mp3")
 while 1:
     #explorerhat.light.blue.off()
     #time.sleep(2) # 3secs
