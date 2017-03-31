@@ -1,74 +1,100 @@
 import explorerhat
 import time
 import pygame
+import pygame.midi
+def _print_device_info():
+    for i in range( pygame.midi.get_count() ):
+        r = pygame.midi.get_device_info(i)
+        (interf, name, input, output, opened) = r
+
+        in_out = ""
+        if input:
+            in_out = "(input)"
+        if output:
+            in_out = "(output)"
+
+        print ("%2i: interface :%s:, name :%s:, opened :%s:  %s" %(i, interf, name, opened, in_out))
 
 #Trying if it works
-pygame.mixer.init()
 pygame.init()
+#pygame.mixer.init()
+pygame.midi.init()
 
-playingTune=0
+player = pygame.midi.Output(0)
+player.set_instrument(0)
+
+playingTune = 0
 caseVar = 0
+
+print (pygame.midi.get_device_info(0))
+print (pygame.midi.get_default_output_id())
+
+_print_device_info()
 
 while 1:
     playingTune = caseVar
     caseVar = explorerhat.input.one.read() + explorerhat.input.two.read() * 2 + explorerhat.input.three.read() * 4 + explorerhat.input.four.read() * 8
 
     if playingTune != caseVar:
-        if (caseVar == 0):
-            pygame.mixer.music.stop()
+        #if (caseVar == 0):
+            #pygame.mixer.music.stop()
 
-        elif (caseVar == 1):
+
+        if (caseVar == 1):
             print("entro 1")
-            pygame.mixer.music.load("Dit1/mario.mp3")
-            pygame.mixer.music.play()
+            #pygame.mixer.music.load("Dit1/mario.mp3")
+            #pygame.mixer.music.play()
 
         elif (caseVar == 2):
             print("entro 2")
-            pygame.mixer.music.load("Dit2/zelda.mp3")
-            pygame.mixer.music.play()
+            #pygame.mixer.music.load("Dit2/zelda.mp3")
+            #pygame.mixer.music.play()
 
         elif (caseVar == 3):
-            break
+            print("entro 1+2")
 
 
         elif (caseVar == 4):
             print("entro 3")
-            pygame.mixer.music.load("Dit3/tetris.mp3")
-            pygame.mixer.music.play()
+            #pygame.mixer.music.load("Dit3/tetris.mp3")
+            #pygame.mixer.music.play()
 
         elif (caseVar == 5):
-            break
+            print("entro 1+3")
 
         elif (caseVar == 6):
-            break
+            print("entro 2+3")
 
         elif (caseVar == 7):
-            break
+            print("entro 1+2+3")
 
         elif (caseVar == 8):
             print("entro 4")
-            pygame.mixer.music.load("Dit4/pokemon.mp3")
-            pygame.mixer.music.play()
+            player.note_on(53, 127)
+            time.sleep(2)
+            player.note_off(53, 127)
+            #pygame.mixer.music.load("Dit4/pokemon.mp3")
+            #pygame.mixer.music.play()
 
         elif (caseVar == 9):
-            break
+            print("entro 1+4")
 
         elif (caseVar == 10):
-            break
+            print("entro 2+4")
 
         elif (caseVar == 11):
-            break
+            print("entro 1+2+4")
 
         elif (caseVar == 12):
-            break
+            print("entro 3+4")
 
         elif (caseVar == 13):
-            break
+            print("entro 1+3+4")
 
         elif (caseVar == 14):
-            break
+            print("entro 2+3+4")
 
         elif (caseVar == 15):
-            break
+            print("entro 1+2+3+4")
 
     time.sleep(0.01) # 0.01secs
