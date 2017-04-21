@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>MMGLOVE</h1>
+    <canvas id="screen" width=1200 height=500 style="border:1px solid #000000; ">
+    </canvas>
+    <div style="float:none;">
+					<button type="button" onclick = buttonPres(0)> 0 </button> <br>
+					<button type="button" onclick = buttonPres(1)> 1 </button> <br>
+					<button type="button" onclick = buttonPres(2)> 2 </button> <br>
+          <button type="button" onclick = buttonPres(3)> 3 </button> <br>
+    </div>
+  </body>
+
+<script>
+  var uo = document.getElementById("screen");
+  var ctx = uo.getContext("2d");
+
+
+  document.addEventListener('keydown', function(event) {
+				if (String.fromCharCode(event.keyCode) == 'A') {
+          ctx.clearRect(0, 0, uo.width, uo.height);
+          ctx.fillStyle = "#f44242";
+          ctx.fillRect(100,100, 50, 50);
+          console.log("sure?");
+				}
+				else if (String.fromCharCode(event.keyCode) == 'D') {
+          ctx.clearRect(0, 0, uo.width, uo.height);
+          ctx.fillStyle = "#44f441";
+          ctx.fillRect(100,100, 50, 50);
+				}
+				else if (String.fromCharCode(event.keyCode) == 'W') {
+          ctx.clearRect(0, 0, uo.width, uo.height);
+          ctx.fillStyle = "#4161f4";
+          ctx.fillRect(100,100, 50, 50);
+				}
+        else if (String.fromCharCode(event.keyCode) == 'S') {
+          ctx.clearRect(0, 0, uo.width, uo.height);
+          ctx.fillStyle = "#f4bb41";
+          ctx.fillRect(100,100, 50, 50);
+				}
+			}, true);
+
+
+    function buttonPres(a){
+      if(a==0){
+        ctx.clearRect(0, 0, uo.width, uo.height);
+        ctx.fillStyle = "#f44242";
+        ctx.fillRect(100,100, 50, 50);
+        console.log("sure?");
+      }
+      else if(a==1){
+        ctx.clearRect(0, 0, uo.width, uo.height);
+        ctx.fillStyle = "#44f441";
+        ctx.fillRect(100,100, 50, 50);
+      }
+      else if(a==2){
+        ctx.clearRect(0, 0, uo.width, uo.height);
+        ctx.fillStyle = "#4161f4";
+        ctx.fillRect(100,100, 50, 50);
+      }
+      else if(a==3){
+        ctx.clearRect(0, 0, uo.width, uo.height);
+        ctx.fillStyle = "#f4bb41";
+        ctx.fillRect(100,100, 50, 50);
+      }
+    }
+</script>
+
+</html>
