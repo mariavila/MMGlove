@@ -53,21 +53,21 @@ while 1:
             #pygame.mixer.music.play()
             if mode==1:
                 player.note_on(48, 127)
-                time.sleep(2)
+                time.sleep(0.5)
                 player.note_off(48, 127)
 
         elif (caseVar == 3):
             print("entro 1+2")
             if mode ==1:
                 player.note_on(53, 127)
-                time.sleep(2)
+                time.sleep(0.5)
                 player.note_off(53, 127)
 
         elif (caseVar == 4):
             print("entro 3")
             if mode ==1:
                 player.note_on(50, 127)
-                time.sleep(2)
+                time.sleep(0.5)
                 player.note_off(50, 127)
             #pygame.mixer.music.load("Dit3/tetris.mp3")
             #pygame.mixer.music.play()
@@ -76,14 +76,14 @@ while 1:
             print("entro 1+3")
             if mode ==1:
                 player.note_on(55, 127)
-                time.sleep(2)
+                time.sleep(0.5)
                 player.note_off(55, 127)
 
         elif (caseVar == 6):
             print("entro 2+3")
             if mode ==1:
                 player.note_on(59, 127)
-                time.sleep(2)
+                time.sleep(0.5)
                 player.note_off(59, 127)
 
         elif (caseVar == 7):
@@ -93,7 +93,7 @@ while 1:
             print("entro 4")
             if mode ==1:
                 player.note_on(52, 127)
-                time.sleep(2)
+                time.sleep(0.5)
                 player.note_off(52, 127)
             #pygame.mixer.music.load("Dit4/pokemon.mp3")
             #pygame.mixer.music.play()
@@ -102,7 +102,7 @@ while 1:
             print("entro 1+4")
             if mode ==1:
                 player.note_on(57, 127)
-                time.sleep(2)
+                time.sleep(0.5)
                 player.note_off(57, 127)
 
         elif (caseVar == 10):
