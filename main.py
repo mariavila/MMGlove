@@ -20,7 +20,7 @@ pygame.init()
 #pygame.mixer.init()
 pygame.midi.init()
 
-player = pygame.midi.Output(0)
+player = pygame.midi.Output(2)
 player.set_instrument(0)
 
 playingTune = 0
