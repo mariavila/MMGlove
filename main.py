@@ -21,7 +21,7 @@ pygame.init()
 pygame.midi.init()
 
 player = pygame.midi.Output(0)
-player.set_instrument(0,1)
+player.set_instrument(0)
 
 playingTune = 0
 caseVar = 0
@@ -70,9 +70,9 @@ while 1:
 
         elif (caseVar == 8):
             print("entro 4")
-            player.note_on(53, 127, 1)
+            player.note_on(53, 127)
             time.sleep(2)
-            player.note_off(53, 127, 1)
+            player.note_off(53, 127)
             #pygame.mixer.music.load("Dit4/pokemon.mp3")
             #pygame.mixer.music.play()
 
