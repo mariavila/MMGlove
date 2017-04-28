@@ -16,7 +16,6 @@ while 1:
         #if (caseVar == 0):
             #pygame.mixer.music.stop()
 
-
         if (caseVar == 1):
             print("entro 1")
             n = Note("C-5")
@@ -77,4 +76,4 @@ while 1:
         elif (caseVar == 15):
             print("entro 1+2+3+4")
 
-    time.sleep(0.01) # 0.01secs
+    time.sleep(0.1) # 0.1secs
