@@ -1,0 +1,6 @@
+sudo modprobe snd-seq-device
+sudo modprobe snd-seq-midi
+sudo modprobe snd-seq-oss
+sudo modprobe snd-seq-midi-event
+sudo modprobe snd-seq
+timidity -iA &
