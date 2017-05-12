@@ -8,11 +8,16 @@
   border-color: #000000;
   background-color: #ff0000;
 }
+
 </style>
 <html>
-  <body>
+<img id="piano" src="./imgs/piano.png" style="display:none;"></img>
+<img id="guitar" src="./imgs/guitar.png" style="display:none;"></img>
+<img id="violin" src="./imgs/violin.png" style="display:none;"></img>
+<img id="saxo" src="./imgs/saxo.png" style="display:none;"></img>
+  <body background="./imgs/background2.jpg" background-repeat= "no-repeat">
     <h1>MMGLOVE</h1>
-    <canvas id="screen" width=1200 height=500 style="border:1px solid #000000; ">
+    <canvas id="screen" width=1200 height=700>
     </canvas>
   </body>
 
@@ -47,22 +52,54 @@
     function ini_sel_ins(){
       ctx.clearRect(0, 0, uo.width, uo.height);
       ctx.font = "40px Arial";
-      ctx.fillStyle = "#f44242";
-      ctx.fillRect(0,0, 300, 500);
+      //ctx.fillStyle = "#f44242";
+      //ctx.fillRect(0,0, 300, 500);
+      var imgP = document.getElementById("piano");
+      ctx.drawImage(imgP, 0,70, 360, 360);
+      //ctx.fillStyle = "#000000";
+      //ctx.fillText("Piano", 100, 250);
+      //ctx.fillStyle = "#44f441";
+      //ctx.fillRect(300,0, 300, 500);
+      var imgG = document.getElementById("guitar");
+      ctx.drawImage(imgG, 350,0, 200,500);
+      //ctx.fillStyle = "#000000";
+      //ctx.fillText("Guitarra", 370, 250);
+      //ctx.fillStyle = "#4161f4";
+      //ctx.fillRect(600,0, 300, 500);
+      var imgV = document.getElementById("violin");
+      ctx.drawImage(imgV, 620,30, 310, 413);
+      //ctx.fillStyle = "#000000";
+      //ctx.fillText("Violi", 700, 250);
+      //ctx.fillStyle = "#f4bb41";
+      //ctx.fillRect(900,0, 300, 500);
+      var imgS = document.getElementById("saxo");
+      ctx.drawImage(imgS, 940,20, 215, 450);
+      //ctx.fillStyle = "#000000";
+      //ctx.fillText("Saxo", 1000, 250);
       ctx.fillStyle = "#000000";
-      ctx.fillText("Piano", 100, 250);
-      ctx.fillStyle = "#44f441";
-      ctx.fillRect(300,0, 300, 500);
+      ctx.fillText("Choose an instrument!", 400, 600);
+    }
+
+    function pause_menu(){
+      ctx.clearRect(0, 0, uo.width, uo.height);
+      ctx.font = "30px Arial";
+      ctx.fillStyle = "rgba(255, 0, 0, 0.3)"
+      ctx.fillRect(0,60, 300, 500);
       ctx.fillStyle = "#000000";
-      ctx.fillText("Guitarra", 370, 250);
-      ctx.fillStyle = "#4161f4";
-      ctx.fillRect(600,0, 300, 500);
+      ctx.fillText("Save music", 75, 310);
+      ctx.fillStyle = "rgba(0, 255, 0, 0.3)"
+      ctx.fillRect(300,60, 300, 500);
       ctx.fillStyle = "#000000";
-      ctx.fillText("Violi", 700, 250);
-      ctx.fillStyle = "#f4bb41";
-      ctx.fillRect(900,0, 300, 500);
+      ctx.fillText("Delete last note", 345, 310);
+      ctx.fillStyle = "rgba(0, 0, 255, 0.3)"
+      ctx.fillRect(600,60, 300, 500);
       ctx.fillStyle = "#000000";
-      ctx.fillText("Saxo", 1000, 250);
+      ctx.fillText("Listen what", 670, 298);
+      ctx.fillText("yo've composed", 640, 332);
+      ctx.fillStyle = "rgba(255, 255, 0, 0.3)"
+      ctx.fillRect(900,60, 300, 500);
+      ctx.fillStyle = "#000000";
+      ctx.fillText("Continue recording", 925, 310);
     }
 
     function record(){
@@ -107,8 +144,8 @@
     }
 
     function pause(){
-      console.log("holis");
-
+      console.log("pause");
+      pause_menu()
     }
 
     function buttonPres(a){
@@ -121,16 +158,21 @@
         else if(estat==1){
           estat++;
         }
-        else if(estat==2){
-          estat--;
-          record();
+        else if(estat==2) {
+          //guardar/download music
+          estat=0;
+          ini_sel_ins();
         }
+
       }
       else if(a==1){
         if(estat==0){
           estat++;
           instrument="Guitarra";
           record();
+        }
+        else if(estat==2){
+          //borrar ultima nota
         }
       }
       else if(a==2){
@@ -139,11 +181,18 @@
           instrument="Violi";
           record();
         }
+        else if(estat==2){
+          //reproduir-ho tot
+        }
       }
       else if(a==3){
         if(estat==0){
           estat++;
           instrument="Saxo";
+          record();
+        }
+        else if(estat==2){
+          estat--;
           record();
         }
       }
