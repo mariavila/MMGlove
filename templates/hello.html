@@ -11,11 +11,11 @@
 
 </style>
 <html>
-<img id="piano" src="../imgs/piano.png" style="display:none;"></img>
-<img id="guitar" src="../imgs/guitar.png" style="display:none;"></img>
-<img id="violin" src="../imgs/violin.png" style="display:none;"></img>
-<img id="saxo" src="../imgs/saxo.png" style="display:none;"></img>
-  <body background="../imgs/background2.jpg" background-repeat= "no-repeat">
+<img id="piano" src="./imgs/piano.png" style="display:none;"></img>
+<img id="guitar" src="./imgs/guitar.png" style="display:none;"></img>
+<img id="violin" src="./imgs/violin.png" style="display:none;"></img>
+<img id="saxo" src="./imgs/saxo.png" style="display:none;"></img>
+  <body background="./imgs/background2.jpg" background-repeat= "no-repeat">
     <h1>MMGLOVE</h1>
     <canvas id="screen" width=1200 height=700>
     </canvas>
@@ -205,15 +205,19 @@
         socket.emit('my event', {data: 'I\'m connected!'});
     });
     socket.on('finger1', function() {
+        console.log("finger1")
         buttonPres(0);
     });
     socket.on('finger2', function() {
+        console.log("finger2")
         buttonPres(1);
     });
     socket.on('finger3', function() {
+        console.log("finger3")
         buttonPres(2);
     });
     socket.on('finger4', function() {
+        console.log("finger4")
         buttonPres(3);
     });
 </script>
