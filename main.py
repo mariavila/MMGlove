@@ -11,7 +11,7 @@ def _print_device_info():
 
         in_out = ""
         if input:
-            in_out = "(input)"
+            in_out = "(input)"m
         if output:
             in_out = "(output)"
 
