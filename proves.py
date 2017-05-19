@@ -7,7 +7,7 @@ import pygame
 import pygame.midi
 
 def runFunc():
-    socketio.run(app)
+    socketio.run(app, host='0.0.0.0')
 
 app = Flask(__name__)
 socketio = SocketIO(app)
