@@ -1,9 +1,13 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
+import threading
+
+def runFunc():
+    socketio.run(app)
 
 app = Flask(__name__)
-
 socketio = SocketIO(app)
+thread = threading.Thread(None, runFunc)
 
 @app.route('/')
 def hello_func():
@@ -13,8 +17,11 @@ def hello_func():
 @socketio.on('my event')
 def handle_my_custom_event(json):
     print('received json: ' + str(json))
-    #emit('lul', "I am groot")
-    emit('my response', json)
+    socketio.emit('ping event', {'data': 42})
 
 if __name__ == '__main__':
-    socketio.run(app)
+    thread.start()
+    while 1:
+        inp = raw_input()
+        if inp == 'a':
+            socketio.emit('ping event', {'data': 42})
