@@ -4,7 +4,16 @@
     socket.on('connect', function() {
         socket.emit('my event', {data: 'I\'m connected!'});
     });
-    socket.on('ping event', function() {
-        console.log("ayyyy LMAO")
+    socket.on('finger1', function() {
+        console.log("finger1")
+    });
+    socket.on('finger2', function() {
+        console.log("finger2")
+    });
+    socket.on('finger3', function() {
+        console.log("finger3")
+    });
+    socket.on('finger4', function() {
+        console.log("finger4")
     });
 </script>
