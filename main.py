@@ -55,9 +55,11 @@ while 1:
             #pygame.mixer.music.play()
             if mode==0:
                 player.set_instrument(0)
-                mode++
+                mode+=1
+                playingTune=20
             elif mode==1:
-                mode++
+                mode+=1
+                playingTune=20
             elif mode==2:
                 file= open("music.txt", 'w')
                 ini=0
@@ -104,6 +106,7 @@ while 1:
                             file.write(", DO4")
                 file.close()
                 mode = 0
+                playingTune=20
 
         elif (caseVar == 2):
             print("entro 2")
@@ -111,7 +114,8 @@ while 1:
             #pygame.mixer.music.play()
             if mode==0:
                 player.set_instrument(24)
-                mode++
+                mode+=1
+                playingTune=20
             elif mode==1:
                 player.note_on(48, 127)
                 time.sleep(0.5)
@@ -132,7 +136,8 @@ while 1:
             print("entro 3")
             if mode==0:
                 player.set_instrument(40)
-                mode++
+                mode+=1
+                playingTune=20
             elif mode ==1:
                 player.note_on(50, 127)
                 time.sleep(0.5)
@@ -168,7 +173,8 @@ while 1:
             print("entro 4")
             if mode==0:
                 player.set_instrument(65)
-                mode++
+                mode+=1
+                playingTune=20
             elif mode ==1:
                 player.note_on(52, 127)
                 time.sleep(0.5)
@@ -176,6 +182,7 @@ while 1:
                 notes= notes + [52]
             elif mode==2:
                 mode = 1
+                playingTune=20
             #pygame.mixer.music.load("Dit4/pokemon.mp3")
             #pygame.mixer.music.play()
 

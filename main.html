@@ -21,7 +21,9 @@
     </canvas>
   </body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
+
   var uo = document.getElementById("screen");
   var ctx = uo.getContext("2d");
   var instrument;
@@ -134,8 +136,6 @@
              requestAnimationFrame(function () {
                  animate(curPerc / 100)
              });
-         }
-         if(estat==2){
             ctx.clearRect(0, 0, uo.width, uo.height);
             pause();
           }
@@ -173,6 +173,8 @@
         }
         else if(estat==2){
           //borrar ultima nota
+          ctx.fillStyle = "#000000";
+          ctx.fillText("Choose an instrument!", 400, 600);
         }
       }
       else if(a==2){
