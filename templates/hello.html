@@ -220,7 +220,7 @@ form {
         else if(estat==5){
           estat=0;
           console.log("torno a linici");
-          var nom_document = document.getElementById('sname').value);
+          var nom_document = document.getElementById('sname').value;
           socket.emit('name', {data: nom_document});
           ini();
         }

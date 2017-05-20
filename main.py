@@ -11,8 +11,8 @@ name = ""
 def runFunc():
     socketio.run(app, host='0.0.0.0')
 
-def guardar_musica:
-    file= open(name, 'w')
+def guardar_musica():
+    file= open(name+".txt", 'w')
     ini=0
     for aux in notes:
         if aux==48:
@@ -24,43 +24,43 @@ def guardar_musica:
         elif aux==50:
             if ini==0:
                 file.write("RE")
-            ini=1
+                ini=1
             else:
                 file.write(", RE")
         elif aux==52:
             if ini==0:
                 file.write("MI")
-            ini=1
+                ini=1
             else:
                 file.write(", MI")
         elif aux==53:
             if ini==0:
                 file.write("FA")
-            ini=1
+                ini=1
             else:
                 file.write(", FA")
         elif aux==55:
             if ini==0:
                 file.write("SOL")
-            ini=1
+                ini=1
             else:
                 file.write(", SOL")
         elif aux==57:
             if ini==0:
                 file.write("LA")
-            ini=1
+                ini=1
             else:
                 file.write(", LA")
         elif aux==59:
             if ini==0:
                 file.write("SI")
-            ini=1
+                ini=1
             else:
                 file.write(", SI")
         elif aux==60:
             if ini==0:
                 file.write("DO4")
-            ini=1
+                ini=1
             else:
                 file.write(", DO4")
     file.close()
@@ -108,10 +108,10 @@ if __name__ == '__main__':
         caseVar = explorerhat.input.one.read() + explorerhat.input.two.read() * 2 + explorerhat.input.three.read() * 4 + explorerhat.input.four.read() * 8
 
         if playingTune != caseVar:
-            time.sleep(0.1) # 0.1secs
-            caseVar2 = explorerhat.input.one.read() + explorerhat.input.two.read() * 2 + explorerhat.input.three.read() * 4 + explorerhat.input.four.read() * 8
+           # time.sleep(0.1) # 0.1secs
+            #caseVar2 = explorerhat.input.one.read() + explorerhat.input.two.read() * 2 + explorerhat.input.three.read() * 4 + explorerhat.input.four.read() * 8
 
-            if caseVar == caseVar2:
+            #if caseVar == caseVar2:
                 if (caseVar == 1):
                     print("entro 1")
                     socketio.emit('finger1')
