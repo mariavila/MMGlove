@@ -56,7 +56,7 @@ if __name__ == '__main__':
                     player.set_instrument(0)
                     mode+=1
                     playingTune=20
-		            notes=[]
+	            notes=[]
                 elif mode==2:
                     mode+=1
                     playingTune=20
@@ -67,49 +67,49 @@ if __name__ == '__main__':
                         if aux==48:
                             if ini==0:
                                 file.write("DO")
-				                ini=1
+		                ini=1
                             else:
                                 file.write(", DO")
                         elif aux==50:
                             if ini==0:
                                 file.write("RE")
-				                ini=1
+		                ini=1
                             else:
                                 file.write(", RE")
                         elif aux==52:
                             if ini==0:
                                 file.write("MI")
-				                ini=1
+		                ini=1
                             else:
                                 file.write(", MI")
                         elif aux==53:
                             if ini==0:
                                 file.write("FA")
-				                ini=1
+		                ini=1
                             else:
                                 file.write(", FA")
                         elif aux==55:
                             if ini==0:
                                 file.write("SOL")
-				                ini=1
+		                ini=1
                             else:
                                 file.write(", SOL")
                         elif aux==57:
                             if ini==0:
                                 file.write("LA")
-				                ini=1
+		                ini=1
                             else:
                                 file.write(", LA")
                         elif aux==59:
                             if ini==0:
                                 file.write("SI")
-				                ini=1
+		                ini=1
                             else:
                                 file.write(", SI")
                         elif aux==60:
                             if ini==0:
                                 file.write("DO4")
-				                ini=1
+		                ini=1
                             else:
                                 file.write(", DO4")
                     file.close()
@@ -124,7 +124,7 @@ if __name__ == '__main__':
                     player.set_instrument(24)
                     mode+=1
                     playingTune=20
-		            notes=[]
+	            notes=[]
                 elif mode==2:
                     player.note_on(48, 127)
                     time.sleep(0.5)
@@ -149,7 +149,7 @@ if __name__ == '__main__':
                     player.set_instrument(40)
                     mode+=1
                     playingTune=20
-		            notes=[]
+	            notes=[]
                 elif mode ==2:
                     player.note_on(50, 127)
                     time.sleep(0.5)
@@ -189,7 +189,7 @@ if __name__ == '__main__':
                     player.set_instrument(65)
                     mode+=1
                     playingTune=20
-		            notes=[]
+	            notes=[]
                 elif mode ==2:
                     player.note_on(52, 127)
                     time.sleep(0.5)
