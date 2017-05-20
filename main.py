@@ -52,7 +52,7 @@ if __name__ == '__main__':
 
                 if mode==0:
                     mode+=1
-                if mode==1:
+                elif mode==1:
                     player.set_instrument(0)
                     mode+=1
                     playingTune=20
