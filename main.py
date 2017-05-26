@@ -6,8 +6,66 @@ import time
 import pygame
 import pygame.midi
 
+name = ""
+
 def runFunc():
     socketio.run(app, host='0.0.0.0')
+
+def guardar_musica:
+    file= open(name, 'w')
+    ini=0
+    for aux in notes:
+        if aux==48:
+            if ini==0:
+                file.write("DO")
+                ini=1
+            else:
+                file.write(", DO")
+        elif aux==50:
+            if ini==0:
+                file.write("RE")
+            ini=1
+            else:
+                file.write(", RE")
+        elif aux==52:
+            if ini==0:
+                file.write("MI")
+            ini=1
+            else:
+                file.write(", MI")
+        elif aux==53:
+            if ini==0:
+                file.write("FA")
+            ini=1
+            else:
+                file.write(", FA")
+        elif aux==55:
+            if ini==0:
+                file.write("SOL")
+            ini=1
+            else:
+                file.write(", SOL")
+        elif aux==57:
+            if ini==0:
+                file.write("LA")
+            ini=1
+            else:
+                file.write(", LA")
+        elif aux==59:
+            if ini==0:
+                file.write("SI")
+            ini=1
+            else:
+                file.write(", SI")
+        elif aux==60:
+            if ini==0:
+                file.write("DO4")
+            ini=1
+            else:
+                file.write(", DO4")
+    file.close()
+    mode = 0
+    playingTune=20
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -20,6 +78,10 @@ def hello_func():
 @socketio.on('my event')
 def handle_my_custom_event(json):
     print('received json: ' + str(json))
+    #socketio.emit('ping event', {'data': 42})
+@socketio.on('name')
+def handle_my_custom_event(json):
+    name = str(json)
     #socketio.emit('ping event', {'data': 42})
 
 pygame.init()
@@ -37,6 +99,7 @@ caseVar = 0
 #mode == 3 : Pause Menu
 #mode == 4 : Listening
 mode = 0
+
 
 if __name__ == '__main__':
     thread.start()
@@ -64,60 +127,7 @@ if __name__ == '__main__':
                         mode+=1
                         playingTune=20
                     elif mode==3:
-                        file= open("music.txt", 'w')
-                        ini=0
-                        for aux in notes:
-                            if aux==48:
-                                if ini==0:
-                                    file.write("DO")
-    	                            ini=1
-                                else:
-                                    file.write(", DO")
-                            elif aux==50:
-                                if ini==0:
-                                    file.write("RE")
-    		                    ini=1
-                                else:
-                                    file.write(", RE")
-                            elif aux==52:
-                                if ini==0:
-                                    file.write("MI")
-    		                    ini=1
-                                else:
-                                    file.write(", MI")
-                            elif aux==53:
-                                if ini==0:
-                                    file.write("FA")
-    		                    ini=1
-                                else:
-                                    file.write(", FA")
-                            elif aux==55:
-                                if ini==0:
-                                    file.write("SOL")
-    		                    ini=1
-                                else:
-                                    file.write(", SOL")
-                            elif aux==57:
-                                if ini==0:
-                                    file.write("LA")
-    		                    ini=1
-                                else:
-                                    file.write(", LA")
-                            elif aux==59:
-                                if ini==0:
-                                    file.write("SI")
-    		                    ini=1
-                                else:
-                                    file.write(", SI")
-                            elif aux==60:
-                                if ini==0:
-                                    file.write("DO4")
-    		                    ini=1
-                                else:
-                                    file.write(", DO4")
-                        file.close()
-                        mode = 0
-                        playingTune=20
+                        guardar_musica()
 
                 elif (caseVar == 2):
                     print("entro 2")
