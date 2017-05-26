@@ -23,7 +23,7 @@ input[type=text]:focus {
     width: 30%;
 }
 
-input[type=submit] {
+input[type=submit]:disabled {
    background-color: rgba(150, 0, 0, 0.3);
    border: none;
    color: white;
@@ -49,8 +49,8 @@ form {
     <canvas id = "no_use" width=1200 height=100></canvas>
     <canvas id="screen" width=1200 height=700></canvas>
     <form id="name_form" style="display:none;">
-      Enter the song's name: <br><input type="text" name="sname"><br>
-      <input type="submit" value="Submit">
+      Enter the song's name: <br><input type="text" id="sname"><br>
+      <input type="submit" value="Gesture OK to submit" disabled="true">
     </form>
   </body>
 
@@ -83,6 +83,8 @@ form {
 			}, true);
 
     function ini(){
+      document.getElementById("screen").style.display = 'Block';
+      document.getElementById("name_form").style.display = 'none';
       ctx.clearRect(0, 0, uo.width, uo.height);
       ctx.font = "60px Arial";
       ctx.fillStyle = "#000000";
@@ -219,6 +221,8 @@ form {
         }
         else if(estat==5){
           estat=0;
+          console.log("torno a linici");
+          var nom_document = document.getElementById('sname').value);
           ini();
         }
 
