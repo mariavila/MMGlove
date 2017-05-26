@@ -95,20 +95,20 @@
       ctx.fillStyle = "rgba(255, 0, 0, 0.3)"
       ctx.fillRect(0,60, 300, 500);
       ctx.fillStyle = "#000000";
-      ctx.fillText("Save music", 75, 310);
+      ctx.fillText("Continue recording", 25, 310);
       ctx.fillStyle = "rgba(0, 255, 0, 0.3)"
       ctx.fillRect(300,60, 300, 500);
       ctx.fillStyle = "#000000";
-      ctx.fillText("Delete last note", 345, 310);
+      ctx.fillText("Listen what", 380, 298);
+      ctx.fillText("you've composed", 340, 332);
       ctx.fillStyle = "rgba(0, 0, 255, 0.3)"
       ctx.fillRect(600,60, 300, 500);
       ctx.fillStyle = "#000000";
-      ctx.fillText("Listen what", 670, 298);
-      ctx.fillText("you've composed", 640, 332);
+      ctx.fillText("Delete last note", 645, 310);
       ctx.fillStyle = "rgba(255, 255, 0, 0.3)"
       ctx.fillRect(900,60, 300, 500);
       ctx.fillStyle = "#000000";
-      ctx.fillText("Continue recording", 925, 310);
+      ctx.fillText("Save music", 975, 310);
     }
 
     function record(){
@@ -165,7 +165,7 @@
         }
         else if(estat==1){
           estat++;
-          instrument="Piano";
+          instrument="Saxo";
           console.log("record");
           record();
         }
@@ -182,7 +182,7 @@
       else if(a==1){
         if(estat==1){
           estat++;
-          instrument="Guitarra";
+          instrument="Violi";
           record();
         }
         else if(estat==3){
@@ -198,7 +198,7 @@
       else if(a==2){
         if(estat==1){
           estat++;
-          instrument="Violi";
+          instrument="Guitarra";
           record();
         }
         else if(estat==3){
@@ -213,7 +213,7 @@
       else if(a==3){
         if(estat==1){
           estat++;
-          instrument="Saxo";
+          instrument="Piano";
           record();
         }
         else if(estat==3){
