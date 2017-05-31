@@ -10,7 +10,7 @@ def runFunc():
     socketio.run(app, host='0.0.0.0')
 
 def guardar_musica(fileName, fileNotes):
-    file= open(fileName +".txt", 'w')
+    file= open("Composed Music/" + fileName + ".txt", 'w')
     ini=0
     for aux in fileNotes:
         if aux==48:
@@ -128,8 +128,8 @@ if __name__ == '__main__':
                     elif mode==2:
                         mode+=1
                         playingTune=20
-                    #elif mode==3:
-                        #guardar_musica()
+                    elif mode==3:
+                        mode=0
 
                 elif (caseVar == 2):
                     print("entro 2")
