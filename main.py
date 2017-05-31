@@ -6,7 +6,7 @@ import time
 import pygame
 import pygame.midi
 
-name = ""
+name = "default"
 
 def runFunc():
     socketio.run(app, host='0.0.0.0')
@@ -81,8 +81,9 @@ def handle_my_custom_event(json):
     #socketio.emit('ping event', {'data': 42})
 @socketio.on('name')
 def handle_my_custom_event(json):
-    name = str(json)
+    #name = str(json)
     print('received json: ' + str(json))
+    print('received json: ' + json[data])
 
     #socketio.emit('ping event', {'data': 42})
 
