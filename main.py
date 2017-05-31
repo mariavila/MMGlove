@@ -9,10 +9,10 @@ import pygame.midi
 def runFunc():
     socketio.run(app, host='0.0.0.0')
 
-def guardar_musica(fileName):
+def guardar_musica(fileName, fileNotes):
     file= open(fileName +".txt", 'w')
     ini=0
-    for aux in notes:
+    for aux in fileNotes:
         if aux==48:
             if ini==0:
                 file.write("DO")
@@ -68,6 +68,7 @@ def guardar_musica(fileName):
 app = Flask(__name__)
 socketio = SocketIO(app)
 thread = threading.Thread(None, runFunc)
+notes = []
 
 @app.route('/')
 def hello_func():
@@ -81,7 +82,7 @@ def handle_my_custom_event(json):
 def handle_my_custom_event(json):
     name = json['data']
     print('received json: ' + json['data'])
-    guardar_musica(name)
+    guardar_musica(name, notes)
 
     #socketio.emit('ping event', {'data': 42})
 
