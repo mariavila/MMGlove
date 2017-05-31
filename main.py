@@ -12,7 +12,11 @@ def runFunc():
 def guardar_musica(fileName, fileNotes):
     file= open(fileName + ".txt", 'w')
     ini=0
+    count=0
     for aux in fileNotes:
+        if count==10:
+            file.write("\n")
+            ini = 0
         if aux==48:
             if ini==0:
                 file.write("DO")
@@ -61,6 +65,7 @@ def guardar_musica(fileName, fileNotes):
                 ini=1
             else:
                 file.write(", DO4")
+        count+=1
     file.close()
     mode = 0
     playingTune=20
