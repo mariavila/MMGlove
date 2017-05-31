@@ -105,6 +105,7 @@ caseVar = 0
 #mode == 2 : Recording
 #mode == 3 : Pause Menu
 #mode == 4 : Listening
+#mode == 5 : Name Selection
 mode = 0
 
 
@@ -134,6 +135,8 @@ if __name__ == '__main__':
                         mode+=1
                         playingTune=20
                     elif mode==3:
+                        mode=5
+                    elif mode==5:
                         mode=0
 
                 elif (caseVar == 2):
