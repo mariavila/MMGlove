@@ -82,6 +82,8 @@ def handle_my_custom_event(json):
 @socketio.on('name')
 def handle_my_custom_event(json):
     name = str(json)
+    print('received json: ' + str(json))
+
     #socketio.emit('ping event', {'data': 42})
 
 pygame.init()
@@ -122,7 +124,7 @@ if __name__ == '__main__':
                         player.set_instrument(65)
                         mode+=1
                         playingTune=20
-	                notes=[]
+                        notes=[]
                     elif mode==2:
                         mode+=1
                         playingTune=20
