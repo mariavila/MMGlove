@@ -17,6 +17,7 @@ def guardar_musica(fileName, fileNotes):
         if count==10:
             file.write("\n")
             ini = 0
+            count = 0
         if aux==48:
             if ini==0:
                 file.write("DO")
