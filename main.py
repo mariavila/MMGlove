@@ -127,8 +127,8 @@ if __name__ == '__main__':
                     elif mode==2:
                         mode+=1
                         playingTune=20
-                    elif mode==3:
-                        guardar_musica()
+                    #elif mode==3:
+                        #guardar_musica()
 
                 elif (caseVar == 2):
                     print("entro 2")
