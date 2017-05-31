@@ -6,13 +6,11 @@ import time
 import pygame
 import pygame.midi
 
-name = "default"
-
 def runFunc():
     socketio.run(app, host='0.0.0.0')
 
-def guardar_musica():
-    file= open(name+".txt", 'w')
+def guardar_musica(fileName):
+    file= open(fileName +".txt", 'w')
     ini=0
     for aux in notes:
         if aux==48:
@@ -81,9 +79,9 @@ def handle_my_custom_event(json):
     #socketio.emit('ping event', {'data': 42})
 @socketio.on('name')
 def handle_my_custom_event(json):
-    #name = str(json)
-    print('received json: ' + str(json))
-    print('received json: ' + json[data])
+    name = json['data']
+    print('received json: ' + json['data'])
+    guardar_musica(name)
 
     #socketio.emit('ping event', {'data': 42})
 
