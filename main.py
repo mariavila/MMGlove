@@ -10,7 +10,7 @@ def runFunc():
     socketio.run(app, host='0.0.0.0')
 
 def guardar_musica(fileName, fileNotes):
-    file= open("Composed Music/" + fileName + ".txt", 'w')
+    file= open(fileName + ".txt", 'w')
     ini=0
     for aux in fileNotes:
         if aux==48:
@@ -212,7 +212,7 @@ if __name__ == '__main__':
                         notes= notes + [52]
                     elif mode==3:
                         socketio.emit('finger4')
-                        mode = 1
+                        mode = 2
                         playingTune=20
 
                 elif (caseVar == 9):
