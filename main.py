@@ -190,18 +190,18 @@ if __name__ == '__main__':
                 elif (caseVar == 5):
                     print("entro 1+3")
                     if mode ==2:
-                        player.note_on(55, 127)
-                        time.sleep(0.5)
-                        player.note_off(55, 127)
-                        notes= notes + [55]
-
-                elif (caseVar == 6):
-                    print("entro 2+3")
-                    if mode ==2:
                         player.note_on(59, 127)
                         time.sleep(0.5)
                         player.note_off(59, 127)
                         notes= notes + [59]
+
+                elif (caseVar == 6):
+                    print("entro 2+3")
+                    if mode ==2:
+                        player.note_on(55, 127)
+                        time.sleep(0.5)
+                        player.note_off(55, 127)
+                        notes= notes + [55]
 
                 elif (caseVar == 7):
                     print("entro 1+2+3")
@@ -226,14 +226,14 @@ if __name__ == '__main__':
 
                 elif (caseVar == 9):
                     print("entro 1+4")
-                    if mode ==2:
-                        player.note_on(57, 127)
-                        time.sleep(0.5)
-                        player.note_off(57, 127)
-                        notes= notes + [57]
 
                 elif (caseVar == 10):
                     print("entro 2+4")
+                    if mode ==2:
+                        player.note_on(60, 127)
+                        time.sleep(0.5)
+                        player.note_off(60, 127)
+                        notes= notes + [60]
 
                 elif (caseVar == 11):
                     print("entro 1+2+4")
@@ -241,10 +241,10 @@ if __name__ == '__main__':
                 elif (caseVar == 12):
                     print("entro 3+4")
                     if mode ==2:
-                        player.note_on(60, 127)
+                        player.note_on(57, 127)
                         time.sleep(0.5)
-                        player.note_off(60, 127)
-                        notes= notes + [60]
+                        player.note_off(57, 127)
+                        notes= notes + [57]
 
                 elif (caseVar == 13):
                     print("entro 1+3+4")
